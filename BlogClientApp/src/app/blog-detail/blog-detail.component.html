@@ -1,0 +1,11 @@
+<div class="container">
+    <div *ngIf="blogPost">
+      <h2>{{ blogPost.text }}</h2>
+      <p>{{ blogPost.text }}</p>
+      <div class="blog-meta">
+        <span>Written by: {{ blogPost.username }}</span> | <span>Date: {{ blogPost.dateCreated | date }}</span>
+      </div>
+      <button [routerLink]="['/blogedit',blogPost.id]" class="btn btn-secondary mt-3">Edit Post</button>
+    </div>
+  </div>
+  

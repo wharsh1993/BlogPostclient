@@ -1,0 +1,32 @@
+<!-- <div class="container">
+    <h2>Blog Posts</h2>
+    <ul class="list-group">
+      <li *ngFor="let post of blogPosts" class="list-group-item">
+        <a [routerLink]="['/blogdetail',post.id]">{{ post.text }}</a>
+      </li>
+    </ul>
+    <button [routerLink]="['/blogedit',0]" class="btn btn-primary mt-3">Add New Blog</button>
+  </div> -->
+  <div class="container mt-4">
+    <!-- <button class="btn btn-primary mb-3" (click)="createNewBlog()">New</button> -->
+    <button class="btn btn-primary mb-3" [routerLink]="['/blogedit',0]" class="btn btn-primary mt-3">Add New Blog</button>
+    
+    <div class="blog-entry" *ngFor="let blog of blogPosts">
+     <div class="form-group">
+        <textarea aria-readonly="true" class="form-control" rows="3" [(ngModel)]="blog.text" readonly></textarea>
+      </div>
+      <div class="blog-info d-flex justify-content-between mt-2">
+        <span><strong>Created:</strong> {{ blog.username }}</span> <br/>
+        <span><strong>Created date:</strong><strong>{{ blog.dateCreated | date: 'dd-MM-yyyy' }}</strong></span><br/>
+        <button ><a [routerLink]="['/blogdetail',blog.id]">Edit</a></button>&nbsp;&nbsp;
+        <!-- <a [routerLink]="['/blogdetail',blog.id]">Delete</a>&nbsp;&nbsp; -->
+        <button (click)="deleteBlog(blog.id)">Delete</button>&nbsp;
+      </div>
+      <div class="blog-actions mt-2">
+        <!-- <button class="btn btn-secondary me-2" (click)="editBlog(blog)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteBlog(blog)">Delete</button> -->
+      </div>
+      <hr />
+    </div>
+  </div>
+  

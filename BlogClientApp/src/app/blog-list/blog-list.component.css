@@ -1,0 +1,22 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .blog-info {
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  .blog-actions button {
+    margin-right: 10px;
+  }
+  
+  hr {
+    border-top: 1px solid #eee;
+  }
+  
